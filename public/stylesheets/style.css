@@ -1,0 +1,78 @@
+*{
+  margin: 0;
+  padding:0 ;
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+#main{
+  height: 100%;
+  width: 100%;
+  background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+#page{
+  height: 50%;
+  width: 22%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1{
+  text-align: center;
+  margin-top: 40px;
+  font-style: italic;
+  font-family: 'yantramanav';
+  margin-bottom: 30px;
+}
+input{
+  margin-top: 25px;
+  
+}
+.one{
+  width: 100%;
+  padding: 6px 25px;
+}
+#one{
+  width: 100%;
+  background-color: rgb(98, 98, 223);
+  padding: 5px 10px;
+  font-family: 'gilroy';
+  /* font-weight: 600; */
+  color: white;
+  outline: none;
+  border: none;
+}
+#signup{
+  height: 10%;
+  width: 22%;
+  background-color: #fff;
+  align-items: center;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#signup h2{
+  font-size: 15px;
+  font-family: 'gilroy';
+  font-weight: 100;
+}
+a{
+  text-decoration: none;
+  color: rgb(17, 0, 255);
+  font-weight: 400;
+
+}
+.two{
+  width: 240px;
+  padding: 4px 20px;
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/lolo.css">
+
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="lain">
+        <div id="nav">
+            <h1>Instagram</h1>
+            <input id="input" type="text" placeholder="Search">
+            <div id="rnav">
+                <a href="/feed"><i class="ri-home-4-fill"></i></a>
+                <i class="ri-message-line"></i>
+                
+                <i id="uploadForm"  class="ri-file-add-fill"></i>
+                <i class="ri-compass-3-fill"></i>
+                <i class="ri-heart-line"></i>
+                <img id="profile"  src="../images/upload/<%=i.dp%>" alt="">
+
+            </div>
+            <a href="/logout"><button>Logout</button></a>
+        </div>
+        <div id="waste"></div>
+        <%j.forEach(function(elem){%>
+            <div id="post">
+                    <div id="upper">
+                            <img id="img"  src="../images/upload/<%=elem.user.dp%>" alt="">
+                        
+                        <div id="name">
+                            <h1 style= ><%=elem.user.username%></h1>  
+                            <h3><%=elem.location%></h3>
+                        </div>
+                        <i id="i" class="ri-more-fill"></i>
+                    </div>
+                    <div id="postimage">
+                        <img  src="../images/upload/<%=elem.photo%>" alt="">
+                    </div>
+                    <div id="buttons">
+                        <a id="a"  href=<%=`/like/${elem._id}`%>>
+                            <i id="down" class="ri-heart-line">
+                                <i id="upon" class="ri-heart-fill"></i>
+                            </i>
+                        </a>  
+                        <i class="ri-chat-3-line"></i>
+                        <i class="ri-send-plane-fill"></i>
+                        <i class="ri-bookmark-line"></i>
+                        <div id="like">
+                            <% if (elem.like.length>2){%>
+                                <p>Liked by <span><%=elem.like[0]%></span> and <span><%=elem.like.length-1%> others</span></p>
+                            <% } else if (elem.like.length==2){%>
+                                
+                                <% if(elem.like[0]==i.username){ %>
+                                    <p> <span>Liked</span> by you and <%=elem.like[1]%></p>
+                                <%} else if(elem.like[1]==i.username){ %>
+                                    <p> <span>Liked</span> by <%=elem.like[0]%> and you</p>
+                                        
+                                <%} else {%>
+                                    <p> <span>Liked</span> by <span><%=elem.like[0]%></span> and <%=elem.like[1]%></p>
+    
+                                <%}%>
+                            <% } else if (elem.like.length==1){%>
+                                <% if(elem.like[0]==i.username){ %>
+                                    <p> <span>Liked</span>  by you</p>
+                                    
+                                <%} else {%>
+                                    <p> <span>Liked</span> by <%=elem.like[0]%></p>
+    
+                                <%}%>
+                            <%} else {%>
+    
+                            <%}%>
+                        </div>
+                        <p><span><%=elem.user.username%></span> <%=elem.name%></p>
+                        <div id="fj">
+                        <h5 >view all <%=elem.comment.length %>  comments</h5>
+                        </div>
+                    </div>
+                    
+                    <form action="/comment/<%=elem._id%>" method="post">
+                        <div id="comment">
+                            <h3>🙂</h3>
+                            <input type="text" name="comment" placeholder="Add a comment...">
+                            <input id="h4" type="submit" value="Post">
+                            
+    
+                        </div>
+                    </form>
+                    
+                    
+                    
+
+                                    
+            </div>
+            
+
+        
+    </div>
+    <div id="jain">
+        <div id="uploadApost">
+            <p>Create new post</p>
+            <hr style="width: 100%;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgXI8yUl6z7aqXxLs-f1wqUHybahAr9Nhq9g&usqp=CAU" alt="">
+            <h3>Upload photo and videos here</h3>
+            <a style="text-decoration: none;" href="/router"><button>Select from computer </button></a>
+
+        </div>
+        <i id="cross" class="ri-close-line"></i>
+        
+    </div>
+    <div id="onclickcomment">
+        <div id="allcomment">
+            <div id="currentimage">
+                <img  src="../images/upload/<%=elem.photo%>" alt="">
+
+            </div>
+            <div id="commentsection">
+                <div id="up">
+                <img id="imgc"  src="../images/upload/<%=elem.user.dp%>" alt="">
+                <p><%=elem.user.username%></p>
+                <i id="i" class="ri-more-fill"></i>
+
+
+
+                </div>
+                
+        
+
+                <%elem.comment.forEach(function(iam){%>
+                <%})%>
+
+            </div>
+        </div>
+    </div>
+    <%})%>
+       
+    
+</body>
+<script>
+    let a = document.querySelector('#uploadForm')
+    let b = document.querySelector('#cross')
+    let c = document.querySelector('#jain')
+    let d = document.querySelector('#down')
+    let f = document.querySelector('#fj')
+    let g = document.querySelector('#onclickcomment')
+    let h = document.querySelector('#u')
+
+
+    
+    
+    a.addEventListener('click',function(){
+        c.style.display = "initial";
+    })
+
+    b.addEventListener('click',function(){
+        console.log("mo")
+        c.style.display = "none";
+    })
+    f.addEventListener('click',function(){
+        console.log("nmn")
+        g.style.display = "initial";
+    })
+
+    
+</script> 
+</html>
